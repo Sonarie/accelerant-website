@@ -1,0 +1,626 @@
+/* =========================================
+   ACCELERANT INTERNATIONAL
+   Base Styles
+   Temporary visual treatment until
+   official Accelerant branding is received
+========================================= */
+
+:root {
+  --white: #ffffff;
+  --off-white: #f6f6f4;
+  --black: #151515;
+  --charcoal: #242424;
+  --gray: #666666;
+  --light-gray: #dddddd;
+--accent: #a51e22;
+  --max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--black);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: min(90%, var(--max-width));
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.site-header {
+  position: relative;
+  z-index: 1000;
+  background: var(--white);
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.header-top {
+  min-height: 105px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.brand-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.brand-tagline {
+  margin-top: 0.25rem;
+  color: var(--gray);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================
+   MAIN NAVIGATION
+========================================= */
+
+.main-nav {
+  background: var(--white);
+  border-top: 1px solid #eeeeee;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  height: 58px;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.nav-link:hover,
+.nav-item:hover > .nav-link {
+  color: var(--black);
+}
+
+
+/* =========================================
+   DROPDOWNS
+========================================= */
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 245px;
+  padding: 0.5rem 0;
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s;
+}
+
+.nav-item:hover .dropdown-menu,
+.nav-item:focus-within .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.7rem 1rem;
+  color: var(--black);
+  font-size: 0.9rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: var(--off-white);
+  color: var(--accent);
+}
+
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 27px;
+  height: 2px;
+  margin: 6px 0;
+  background: var(--black);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  background: var(--charcoal);
+  color: var(--white);
+  padding: 6.5rem 0;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 5rem;
+}
+
+.eyebrow,
+.section-label {
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+}
+
+.hero h1 {
+  max-width: 700px;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.hero-lead {
+  max-width: 650px;
+  margin-top: 1.75rem;
+  color: #dddddd;
+  font-size: 1.25rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.25rem;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.button {
+  display: inline-block;
+  padding: 0.9rem 1.4rem;
+  border: 2px solid transparent;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.button-primary {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.button-primary:hover {
+  filter: brightness(0.9);
+}
+
+.button-secondary {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.button-secondary:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+
+/* =========================================
+   VIDEO
+========================================= */
+
+.video-placeholder {
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border: 1px solid #555555;
+  background: #1c1c1c;
+  text-align: center;
+}
+
+.video-label {
+  margin-bottom: 0.75rem;
+  color: #aaaaaa;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.video-placeholder strong {
+  font-size: 1.5rem;
+}
+
+.video-placeholder span:last-child {
+  color: #bbbbbb;
+}
+
+
+/* =========================================
+   HOME BOOKS
+========================================= */
+
+.home-books {
+  padding: 6rem 0;
+  background: var(--white);
+}
+
+.book-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.8fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.book-item {
+  text-align: center;
+}
+
+.book-cover-placeholder {
+  width: min(230px, 100%);
+  aspect-ratio: 2 / 3;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: var(--charcoal);
+  color: var(--white);
+  font-weight: 700;
+  text-align: center;
+}
+
+.book-item h2 {
+  font-size: 1.15rem;
+}
+
+.book-item h2 span {
+  display: block;
+  color: var(--accent);
+}
+
+.book-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.5rem;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.book-cta strong {
+  color: var(--accent);
+  font-size: 3.5rem;
+}
+
+.text-link {
+  margin-top: 1.5rem;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: none;
+}
+
+
+/* =========================================
+   HOME MESSAGE
+========================================= */
+
+.home-message {
+  padding: 7rem 0;
+  background: var(--off-white);
+}
+
+.message-inner {
+  max-width: 900px;
+}
+
+.home-message h2 {
+  max-width: 850px;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.home-message p:not(.section-label) {
+  max-width: 700px;
+  margin: 1.5rem 0 2rem;
+  color: var(--gray);
+  font-size: 1.15rem;
+}
+
+
+/* =========================================
+   HOME PATHS
+========================================= */
+
+.home-paths {
+  padding: 6rem 0;
+}
+
+.path-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.path-card {
+  min-height: 300px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 1px solid var(--light-gray);
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.path-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.path-card > span {
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.path-card h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+}
+
+.path-card p {
+  color: var(--gray);
+}
+
+
+/* =========================================
+   FINAL CTA
+========================================= */
+
+.home-cta {
+  padding: 6rem 0;
+  background: var(--charcoal);
+  color: var(--white);
+  text-align: center;
+}
+
+.home-cta p {
+  margin-bottom: 0.75rem;
+  color: var(--accent);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.home-cta h2 {
+  max-width: 750px;
+  margin: 0 auto 2rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+  padding: 3rem 0;
+  background: #0c0c0c;
+  color: #aaaaaa;
+  font-size: 0.8rem;
+}
+
+.site-footer strong {
+  color: var(--white);
+}
+
+.site-footer p {
+  max-width: 950px;
+  margin-top: 0.75rem;
+}
+
+
+/* =========================================
+   TABLET / MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .header-top {
+    min-height: 85px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .main-nav.active {
+    display: block;
+  }
+
+  .nav-inner {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .nav-item {
+    width: 100%;
+    border-top: 1px solid #eeeeee;
+  }
+
+  .nav-link {
+    width: 100%;
+    height: auto;
+    padding: 1rem 5%;
+    justify-content: flex-start;
+  }
+
+  .dropdown-menu {
+    position: static;
+    display: none;
+    min-width: 0;
+    padding: 0 0 0.75rem;
+    border: 0;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .nav-item.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu a {
+    padding: 0.7rem 8%;
+  }
+
+  .hero {
+    padding: 5rem 0;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .book-display {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .book-cta {
+    grid-column: 1 / -1;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  .path-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .path-card {
+    min-height: 230px;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .brand-name {
+    font-size: 1rem;
+  }
+
+  .brand-tagline {
+    max-width: 260px;
+    font-size: 0.6rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 15vw, 4.5rem);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .book-display {
+    grid-template-columns: 1fr;
+  }
+
+  .book-cta {
+    grid-column: auto;
+  }
+
+}
