@@ -52,9 +52,14 @@ img {
    HEADER
 ========================================= */
 
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 .site-header {
   position: relative;
-  z-index: 1000;
   background: var(--white);
   border-bottom: 1px solid var(--light-gray);
 }
@@ -501,6 +506,269 @@ img {
   margin-top: 0.75rem;
 }
 
+/* =========================================
+   INTERIOR PAGE HERO
+========================================= */
+
+.page-hero {
+  padding: 5.5rem 0;
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.page-hero-inner {
+  max-width: 900px;
+}
+
+.page-hero h1 {
+  max-width: 850px;
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.page-hero-lead {
+  max-width: 750px;
+  margin-top: 1.75rem;
+  color: #dddddd;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   INTERIOR CONTENT
+========================================= */
+
+.content-section {
+  padding: 6rem 0;
+}
+
+.content-section-alt {
+  background: var(--off-white);
+}
+
+.content-narrow {
+  max-width: 900px;
+}
+
+.content-section h2 {
+  margin-bottom: 1.75rem;
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.content-section p {
+  margin-bottom: 1.4rem;
+  color: var(--gray);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.content-section p:last-child {
+  margin-bottom: 0;
+}
+
+.statement-block h2 {
+  max-width: 800px;
+}
+
+.statement-block .lead-copy {
+  max-width: 800px;
+  color: var(--black);
+  font-size: 1.3rem;
+  line-height: 1.7;
+}
+
+.content-callout {
+  margin-top: 3rem;
+  padding: 2.5rem;
+  border-left: 5px solid var(--accent);
+  background: var(--off-white);
+}
+
+.content-callout h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.7rem;
+}
+
+.content-callout p {
+  margin: 0;
+}
+
+
+/* =========================================
+   ASSESSMENT
+========================================= */
+
+.assessment-section {
+  padding: 7rem 0;
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.assessment-intro {
+  max-width: 850px;
+}
+
+.assessment-intro h2 {
+  margin-bottom: 1.75rem;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.assessment-intro > p:not(.section-label) {
+  margin-bottom: 1.25rem;
+  color: #d0d0d0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.assessment-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.assessment-card {
+  padding: 2rem;
+  border: 1px solid #4a4a4a;
+  background: #1c1c1c;
+}
+
+.assessment-number {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.assessment-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.assessment-card p {
+  color: #c8c8c8;
+}
+
+.assessment-copy {
+  margin-top: 4rem;
+}
+
+.assessment-copy p {
+  margin-bottom: 1.25rem;
+  color: #d0d0d0;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.assessment-copy strong {
+  color: var(--white);
+}
+
+
+/* =========================================
+   FORMS
+========================================= */
+
+.form-section {
+  padding: 7rem 0;
+  background: var(--off-white);
+}
+
+.form-container {
+  max-width: 1000px;
+}
+
+.form-heading {
+  max-width: 750px;
+  margin-bottom: 3rem;
+}
+
+.form-heading h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.form-heading > p:not(.section-label) {
+  color: var(--gray);
+  font-size: 1.1rem;
+}
+
+.site-form {
+  padding: 3rem;
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field-full {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  margin-bottom: 0.5rem;
+  color: var(--black);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid #bdbdbd;
+  border-radius: 0;
+  background: var(--white);
+  color: var(--black);
+  font: inherit;
+}
+
+.form-field textarea {
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+.site-form .button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.form-note {
+  margin-top: 1.25rem;
+  color: var(--gray);
+  font-size: 0.85rem;
+}
 
 /* =========================================
    TABLET / MOBILE
