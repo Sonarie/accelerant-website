@@ -16,6 +16,7 @@ async function loadComponent(elementId, filePath) {
   }
 }
 
+
 async function loadGlobalComponents() {
   await Promise.all([
     loadComponent("site-header", "components/header.html"),
@@ -25,10 +26,16 @@ async function loadGlobalComponents() {
   initializeNavigation();
 }
 
+
 function initializeNavigation() {
   const menuToggle = document.querySelector(".menu-toggle");
   const mainNav = document.querySelector(".main-nav");
   const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+
+  /* =========================================
+     MOBILE NAVIGATION
+  ========================================= */
 
   if (menuToggle && mainNav) {
     menuToggle.addEventListener("click", () => {
@@ -41,6 +48,11 @@ function initializeNavigation() {
     });
   }
 
+
+  /* =========================================
+     MOBILE DROPDOWNS
+  ========================================= */
+
   dropdownToggles.forEach((toggle) => {
     toggle.addEventListener("click", () => {
       const navItem = toggle.closest(".nav-item");
@@ -50,6 +62,68 @@ function initializeNavigation() {
       }
     });
   });
+
+
+  /* =========================================
+     STICKY NAVIGATION
+  ========================================= */
+
+  if (mainNav) {
+    let navOffset = mainNav.offsetTop;
+    let navHeight = mainNav.offsetHeight;
+
+    const updateNavMeasurements = () => {
+      /*
+       * Temporarily remove the fixed state before measuring.
+       * This keeps the original navigation position accurate.
+       */
+      const wasFixed = mainNav.classList.contains("nav-fixed");
+
+      if (wasFixed) {
+        mainNav.classList.remove("nav-fixed");
+        document.body.classList.remove("nav-is-fixed");
+      }
+
+      navOffset = mainNav.offsetTop;
+      navHeight = mainNav.offsetHeight;
+
+      document.documentElement.style.setProperty(
+        "--nav-height",
+        `${navHeight}px`
+      );
+
+      handleStickyNav();
+    };
+
+
+    const handleStickyNav = () => {
+      if (window.scrollY >= navOffset) {
+        mainNav.classList.add("nav-fixed");
+        document.body.classList.add("nav-is-fixed");
+      } else {
+        mainNav.classList.remove("nav-fixed");
+        document.body.classList.remove("nav-is-fixed");
+      }
+    };
+
+
+    document.documentElement.style.setProperty(
+      "--nav-height",
+      `${navHeight}px`
+    );
+
+    window.addEventListener("scroll", handleStickyNav);
+
+    window.addEventListener("resize", () => {
+      updateNavMeasurements();
+    });
+
+    handleStickyNav();
+  }
 }
 
-document.addEventListener("DOMContentLoaded", loadGlobalComponents);
+
+document.addEventListener(
+  "DOMContentLoaded",
+  loadGlobalComponents
+);

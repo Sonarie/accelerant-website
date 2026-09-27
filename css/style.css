@@ -53,8 +53,7 @@ img {
 ========================================= */
 
 #site-header {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 1000;
 }
 
@@ -65,31 +64,25 @@ img {
 }
 
 .header-top {
-  min-height: 105px;
+  min-height: 150px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-.brand {
-  display: flex;
-  flex-direction: column;
+.brand-logo-link {
+  display: block;
+  width: min(760px, 80vw);
   text-decoration: none;
 }
 
-.brand-name {
-  font-size: 1.35rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-}
-
-.brand-tagline {
-  margin-top: 0.25rem;
-  color: var(--gray);
-  font-size: 0.72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+.header-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
 }
 
 
@@ -98,8 +91,28 @@ img {
 ========================================= */
 
 .main-nav {
+  position: relative;
+  z-index: 1000;
+  width: 100%;
   background: var(--white);
   border-top: 1px solid #eeeeee;
+}
+
+/* Applied by JavaScript after nav reaches top */
+
+.main-nav.nav-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Prevent page jump when nav becomes fixed */
+
+body.nav-is-fixed {
+  padding-top: var(--nav-height, 0px);
 }
 
 .nav-inner {
@@ -132,8 +145,6 @@ img {
 .nav-item:hover > .nav-link {
   color: var(--black);
 }
-
-
 /* =========================================
    DROPDOWNS
 ========================================= */
@@ -1825,6 +1836,627 @@ img {
 }
 
 /* =========================================
+   HOME PAGE V2
+========================================= */
+
+
+/* =========================================
+   HOME HERO
+========================================= */
+
+.home-hero {
+  padding: 0;
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.home-hero .hero-inner {
+  min-height: auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: start;
+  gap: 5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 4rem;
+}
+
+.home-hero .hero-video {
+  padding-top: 3.5rem;
+}
+
+.home-hero .hero-content {
+  max-width: 720px;
+}
+
+.home-hero h1 {
+  margin: 0.8rem 0 1.75rem;
+  font-size: clamp(3.75rem, 7vw, 6.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+}
+
+.home-hero h1 span {
+  color: var(--accent);
+}
+
+.home-hero .hero-lead {
+  max-width: 650px;
+  color: #d0d0d0;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.home-hero .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+
+/* =========================================
+   HOME WELCOME VIDEO
+========================================= */
+
+.home-video-placeholder {
+  min-height: 420px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #555555;
+  background:
+    linear-gradient(
+      145deg,
+      #303030 0%,
+      #1b1b1b 100%
+    );
+}
+
+.home-video-play {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 2rem;
+}
+
+.home-video-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.home-video-info .video-label {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.home-video-info strong {
+  font-size: 1.75rem;
+  line-height: 1.1;
+}
+
+.home-video-info > span:last-child {
+  color: #aaaaaa;
+  font-size: 0.9rem;
+}
+
+
+/* =========================================
+   HOME ACCESS
+========================================= */
+
+.home-access {
+  padding: 4.5rem 0;
+  background: var(--white);
+}
+
+.home-access-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.home-access h2 {
+  max-width: 550px;
+  margin-top: 0.8rem;
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.home-access-copy {
+  max-width: 650px;
+}
+
+.home-access-copy p {
+  margin-bottom: 1.4rem;
+  color: var(--gray);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.home-access-copy .home-access-lead {
+  color: var(--black);
+  font-size: 1.25rem;
+  line-height: 1.65;
+}
+
+.home-access-copy .text-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+
+/* =========================================
+   CIRCLE OF LEVERAGE
+========================================= */
+
+.home-col {
+  padding: 4.5rem 0;
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.home-col-heading {
+  max-width: 850px;
+  margin-bottom: 3.5rem;
+}
+
+.home-col-heading h2 {
+  margin-top: 0.8rem;
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.home-col-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #555555;
+  border-bottom: 1px solid #555555;
+}
+
+.home-col-stat {
+  min-height: 300px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #555555;
+}
+
+.home-col-stat:last-child {
+  border-right: 0;
+}
+
+.home-col-stat strong {
+  color: var(--accent);
+  font-size: clamp(3.75rem, 7vw, 6rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+}
+
+.home-col-stat span {
+  margin-top: 0.7rem;
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.home-col-stat p {
+  max-width: 280px;
+  margin-top: auto;
+  padding-top: 2rem;
+  color: #cccccc;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   HOW WE HELP
+========================================= */
+
+.home-paths {
+  padding: 4.5rem 0;
+  background: var(--off-white);
+}
+
+.home-section-heading {
+  margin-bottom: 3rem;
+}
+
+.home-section-heading h2 {
+  margin-top: 0.8rem;
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.home-paths .path-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.home-paths .path-card {
+  min-height: 340px;
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--light-gray);
+  background: var(--white);
+  color: var(--black);
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.home-paths .path-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.home-paths .path-card > span {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.home-paths .path-card h3 {
+  margin: 2.25rem 0 1rem;
+  font-size: 1.75rem;
+  line-height: 1.1;
+}
+
+.home-paths .path-card p {
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.path-arrow {
+  margin-top: auto;
+  padding-top: 2rem;
+  color: var(--accent);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+
+/* =========================================
+   HOME BOOKS
+========================================= */
+
+.home-books-new {
+  padding: 5rem 0;
+  background: var(--white);
+  overflow: hidden;
+}
+
+.home-books-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 6rem;
+}
+
+.home-books-visual {
+  min-height: 520px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-book-primary,
+.home-book-advanced {
+  position: absolute;
+  width: min(310px, 55%);
+}
+
+.home-book-primary {
+  z-index: 2;
+  left: 8%;
+  transform: rotate(-4deg);
+}
+
+.home-book-advanced {
+  z-index: 1;
+  right: 7%;
+  transform: rotate(5deg);
+  overflow: hidden;
+}
+
+.home-book-primary img,
+.home-book-advanced img {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-shadow:
+    0 22px 45px rgba(0, 0, 0, 0.18),
+    0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.home-book-advanced span {
+  position: absolute;
+  top: 46%;
+  left: 0;
+  width: 100%;
+  padding: 0.65rem 0.25rem;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 1.15rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transform: rotate(-8deg);
+  transform-origin: center;
+}
+
+.home-books-content {
+  max-width: 600px;
+}
+
+.home-books-content h2 {
+  margin: 0.8rem 0 0.5rem;
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.home-books-author {
+  margin-bottom: 2rem;
+  color: var(--accent) !important;
+  font-size: 0.8rem !important;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.home-books-content > p {
+  color: var(--gray);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.home-books-message {
+  margin: 2.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.6rem;
+  text-transform: uppercase;
+}
+
+.home-books-message span {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.home-books-message strong {
+  color: var(--accent);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+
+/* =========================================
+   HOME INTRODUCTORY CALL
+========================================= */
+
+.home-intro-call {
+  padding: 4.5rem 0;
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.home-intro-call-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.home-intro-call h2 {
+  max-width: 600px;
+  margin-top: 0.8rem;
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.home-intro-call-content {
+  max-width: 600px;
+}
+
+.home-intro-call-content p {
+  margin-bottom: 1.25rem;
+  color: #cccccc;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.home-intro-call-content .button {
+  margin-top: 1rem;
+}
+
+/* =========================================
+   HOME BOOKS — THREE COLUMN FEATURE
+========================================= */
+
+.home-books-new {
+  padding: 3.5rem 0;
+  background: var(--white);
+  overflow: hidden;
+}
+
+.home-books-feature {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr 0.8fr;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+
+/* =========================================
+   BOOK SIDES
+========================================= */
+
+.home-book-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.home-book-side img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.home-book-side-original > img,
+.home-advanced-cover {
+  width: min(300px, 100%);
+}
+
+.home-book-side-original > img {
+  transform: none;
+  box-shadow:
+    0 22px 45px rgba(0, 0, 0, 0.16),
+    0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.home-book-side-label {
+  color: var(--gray);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+
+/* =========================================
+   ADVANCED BOOK
+========================================= */
+
+.home-advanced-cover {
+  position: relative;
+  overflow: hidden;
+  transform: none;
+  box-shadow:
+    0 22px 45px rgba(0, 0, 0, 0.16),
+    0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.home-advanced-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.home-advanced-banner {
+  position: absolute;
+  top: 48%;
+  left: -15%;
+  width: 130%;
+  padding: 0.8rem 1rem;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.28);
+  transform: rotate(-12deg);
+  transform-origin: center;
+}
+
+
+/* =========================================
+   BOOK CENTER CONTENT
+========================================= */
+
+.home-books-center {
+  max-width: 540px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home-books-center h2 {
+  margin: 0.6rem 0 0.4rem;
+  font-size: clamp(2.75rem, 4.5vw, 4.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.home-books-center .home-books-author {
+  margin-bottom: 1.25rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.home-books-description {
+  max-width: 500px;
+  margin: 0 auto;
+  color: var(--gray);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   GET MORE MESSAGE
+========================================= */
+
+.home-books-center .home-books-message {
+  margin: 2.25rem 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.55rem;
+  text-transform: uppercase;
+}
+
+.home-books-center .home-books-message span {
+  color: var(--black);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.home-books-center .home-books-message strong {
+  color: var(--accent);
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* =========================================
    TABLET / MOBILE
 ========================================= */
 
@@ -2108,6 +2740,110 @@ img {
     top: auto;
     max-width: 700px;
   }
+
+    /* =========================================
+     HOME PAGE V2
+  ========================================= */
+
+/* =========================================
+   HOME HERO
+========================================= */
+
+.home-hero {
+  padding: 0;
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.home-hero .hero-inner {
+  min-height: auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: start;
+  gap: 5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 4rem;
+}
+
+.home-hero .hero-video {
+  padding-top: 3.5rem;
+}
+
+  .home-access-grid,
+  .home-books-grid,
+  .home-intro-call-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .home-col-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-col-stat {
+    min-height: 220px;
+    border-right: 0;
+    border-bottom: 1px solid #555555;
+  }
+
+  .home-col-stat:last-child {
+    border-bottom: 0;
+  }
+
+  .home-paths .path-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-paths .path-card {
+    min-height: 260px;
+  }
+
+  .home-books-visual {
+    min-height: 500px;
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .home-book-primary,
+  .home-book-advanced {
+    width: min(300px, 48%);
+  }
+
+  .home-books-content {
+    max-width: 700px;
+  }
+
+    /* =========================================
+     HOME BOOKS — TABLET
+  ========================================= */
+
+  .home-books-feature {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem 2rem;
+  }
+
+  .home-books-center {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    max-width: 650px;
+  }
+
+  .home-book-side-original {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .home-book-side-advanced {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .home-book-side-original > img,
+  .home-advanced-cover {
+    width: min(280px, 80%);
+  }
+
 }
 
 
@@ -2338,4 +3074,122 @@ img {
   .intro-next-step {
     padding: 3.5rem 0;
   }
+
+    /* =========================================
+     HOME PAGE V2
+  ========================================= */
+
+  .home-hero h1 {
+    font-size: 3.4rem;
+  }
+
+  .home-hero .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .home-hero .hero-actions .button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .home-video-placeholder {
+    min-height: 280px;
+    padding: 1.75rem;
+  }
+
+  .home-video-play {
+    width: 70px;
+    height: 70px;
+    font-size: 1.5rem;
+  }
+
+  .home-access,
+  .home-col,
+  .home-paths,
+  .home-books-new,
+  .home-intro-call {
+    padding: 3.5rem 0;
+  }
+
+  .home-col-stat {
+    min-height: 200px;
+    padding: 2rem 0;
+  }
+
+  .home-paths .path-card {
+    min-height: 280px;
+    padding: 1.75rem;
+  }
+
+  .home-books-visual {
+    min-height: 390px;
+  }
+
+  .home-book-primary,
+  .home-book-advanced {
+    width: 55%;
+  }
+
+  .home-book-primary {
+    left: 2%;
+  }
+
+  .home-book-advanced {
+    right: 2%;
+  }
+
+.home-book-advanced span {
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+  .home-books-message {
+    margin: 2rem 0;
+  }
+
+  .home-intro-call-grid {
+    gap: 2.5rem;
+  }
+
+    /* =========================================
+     HOME BOOKS — MOBILE
+  ========================================= */
+
+  .home-books-feature {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .home-books-center {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .home-book-side-original {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .home-book-side-advanced {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .home-book-side-original > img,
+  .home-advanced-cover {
+    width: min(250px, 70%);
+  }
+
+  .home-advanced-banner {
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+  }
+
+  .home-books-center .home-books-message {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1rem;
+  }
+
 }
