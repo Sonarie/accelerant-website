@@ -1252,6 +1252,193 @@ img {
 }
 
 /* =========================================
+   PREMIER SERVICES
+========================================= */
+
+.premier-feature {
+  padding: 4.5rem 0;
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+
+/* FEATURE HEADING */
+
+.premier-feature-heading {
+  max-width: 800px;
+  margin-bottom: 3.5rem;
+}
+
+.premier-feature-heading h2 {
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+
+/* OPPORTUNITY GRID */
+
+.premier-opportunity-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  border-top: 1px solid #555555;
+  border-bottom: 1px solid #555555;
+}
+
+.premier-opportunity {
+  min-height: 280px;
+  padding: 2rem;
+
+  border-right: 1px solid #555555;
+}
+
+.premier-opportunity:last-child {
+  border-right: 0;
+}
+
+.premier-opportunity > span {
+  display: block;
+  margin-bottom: 3rem;
+
+  color: var(--accent);
+
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.premier-opportunity h3 {
+  margin-bottom: 1rem;
+
+  font-size: 1.35rem;
+  line-height: 1.15;
+}
+
+.premier-opportunity p {
+  color: #cfcfcf;
+
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* =========================================
+   CREATING URGENCY
+========================================= */
+
+.urgency-feature {
+  padding: 4.5rem 0;
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.urgency-feature-inner {
+  max-width: 950px;
+}
+
+.urgency-feature h2 {
+  margin: 1rem 0 2rem;
+
+  font-size: clamp(4rem, 9vw, 7.5rem);
+  line-height: 0.85;
+  letter-spacing: -0.055em;
+  text-transform: uppercase;
+}
+
+.urgency-feature h2 span {
+  color: var(--accent);
+}
+
+.urgency-feature p:not(.section-label) {
+  max-width: 650px;
+
+  color: #d0d0d0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* =========================================
+   MASTER LICENSING
+========================================= */
+
+.licensing-feature {
+  padding: 4.5rem 0;
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+
+/* HEADING */
+
+.licensing-heading {
+  max-width: 800px;
+  margin-bottom: 3.5rem;
+}
+
+.licensing-heading h2 {
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+
+/* REQUIREMENTS */
+
+.licensing-requirements {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #555555;
+  border-bottom: 1px solid #555555;
+}
+
+.licensing-requirement {
+  min-height: 320px;
+  padding: 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-right: 1px solid #555555;
+}
+
+.licensing-requirement:last-child {
+  border-right: 0;
+}
+
+
+/* LARGE IDENTIFIERS */
+
+.licensing-number,
+.licensing-icon {
+  display: block;
+
+  color: var(--accent);
+
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+
+/* CARD COPY */
+
+.licensing-requirement h3 {
+  margin-bottom: 0.8rem;
+
+  font-size: 1.4rem;
+  line-height: 1.15;
+}
+
+.licensing-requirement p {
+  color: #cccccc;
+
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* =========================================
    TABLET / MOBILE
 ========================================= */
 
@@ -1337,42 +1524,7 @@ img {
     min-height: 230px;
   }
 
-}
-
-
-@media (max-width: 550px) {
-
-  .brand-name {
-    font-size: 1rem;
-  }
-
-  .brand-tagline {
-    max-width: 260px;
-    font-size: 0.6rem;
-  }
-
-  .hero h1 {
-    font-size: clamp(3rem, 15vw, 4.5rem);
-  }
-
-  .hero-actions {
-    flex-direction: column;
-  }
-
-  .button {
-    width: 100%;
-    text-align: center;
-  }
-
-  .book-display {
-    grid-template-columns: 1fr;
-  }
-
-  .book-cta {
-    grid-column: auto;
-  }
-
-    /* INTERIOR PAGES */
+     /* INTERIOR PAGES */
 
   .page-hero {
     padding: 4rem 0;
@@ -1461,7 +1613,93 @@ img {
     border-bottom: 1px solid #555555;
   }
 
-    /* INTERIOR PAGES */
+    /* PREMIER SERVICES */
+
+  .premier-feature {
+    padding: 3.5rem 0;
+  }
+
+  .premier-opportunity-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .premier-opportunity:nth-child(2) {
+    border-right: 0;
+  }
+
+  .premier-opportunity:nth-child(-n+2) {
+    border-bottom: 1px solid #555555;
+  }
+
+    /* CREATING URGENCY */
+
+  .urgency-feature {
+    padding: 3.5rem 0;
+  }
+
+    /* MASTER LICENSING */
+
+  .licensing-feature {
+    padding: 3.5rem 0;
+  }
+
+  .licensing-requirements {
+    grid-template-columns: 1fr;
+  }
+
+  .licensing-requirement {
+    min-height: 0;
+    padding: 2rem 0;
+
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    align-items: center;
+    gap: 2rem;
+
+    border-right: 0;
+    border-bottom: 1px solid #555555;
+  }
+
+  .licensing-requirement:last-child {
+    border-bottom: 0;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .brand-name {
+    font-size: 1rem;
+  }
+
+  .brand-tagline {
+    max-width: 260px;
+    font-size: 0.6rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 15vw, 4.5rem);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .book-display {
+    grid-template-columns: 1fr;
+  }
+
+  .book-cta {
+    grid-column: auto;
+  }
+
+     /* INTERIOR PAGES */
 
   .page-hero {
     padding: 3.5rem 0;
@@ -1517,6 +1755,62 @@ img {
   .speaker-stat-number,
   .advisor-number,
   .coaching-number {
+    font-size: 3.5rem;
+  }
+
+    /* PREMIER SERVICES */
+
+  .premier-feature-heading {
+    margin-bottom: 2.5rem;
+  }
+
+  .premier-opportunity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .premier-opportunity {
+    min-height: 0;
+    padding: 1.75rem 0;
+
+    border-right: 0;
+    border-bottom: 1px solid #555555;
+  }
+
+  .premier-opportunity:nth-child(2) {
+    border-right: 0;
+  }
+
+  .premier-opportunity:nth-child(-n+2) {
+    border-bottom: 1px solid #555555;
+  }
+
+  .premier-opportunity:last-child {
+    border-bottom: 0;
+  }
+
+  .premier-opportunity > span {
+    margin-bottom: 1.25rem;
+  }
+
+    /* CREATING URGENCY */
+
+  .urgency-feature h2 {
+    font-size: clamp(3.5rem, 17vw, 5rem);
+  }
+
+    /* MASTER LICENSING */
+
+  .licensing-heading {
+    margin-bottom: 2.5rem;
+  }
+
+  .licensing-requirement {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .licensing-number,
+  .licensing-icon {
     font-size: 3.5rem;
   }
 
