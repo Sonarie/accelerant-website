@@ -3193,3 +3193,45 @@ body.nav-is-fixed {
   }
 
 }
+
+/* =========================================
+   HOME VIDEO — COMING SOON
+========================================= */
+
+.home-video-coming-soon {
+  text-align: center;
+}
+
+.home-video-coming-soon .home-video-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  width: 100%;
+}
+
+.coming-soon-title {
+  max-width: 420px;
+  margin: 0.5rem 0;
+  color: var(--white);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.coming-soon-badge {
+  display: inline-block;
+  width: fit-content;
+  margin: 0.5rem 0 1rem;
+  padding: 0.55rem 1.25rem;
+  background: var(--accent);
+  border: none;
+  border-radius: 4px;
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: default;
+}
