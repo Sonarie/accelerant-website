@@ -3235,3 +3235,92 @@ body.nav-is-fixed {
   letter-spacing: 0.08em;
   cursor: default;
 }
+
+
+
+/* =========================================
+   KEYNOTE SPEAKING — PHOTO INTRO
+========================================= */
+
+.keynote-intro {
+  padding: 2.5rem 0;
+}
+
+.keynote-intro-grid {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 700px);
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.keynote-photo {
+  width: 100%;
+  max-width: 320px;
+  margin: 0;
+}
+
+.keynote-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.keynote-intro-content {
+  max-width: 700px;
+}
+
+.keynote-intro-content h2 {
+  margin-bottom: 1.25rem;
+}
+
+.keynote-intro-content .lead-copy {
+  color: var(--black);
+  font-size: 1.15rem;
+  line-height: 1.65;
+}
+
+/* =========================================
+   KEYNOTE SPEAKING — TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .keynote-intro-grid {
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+  }
+
+  .keynote-photo {
+    max-width: 280px;
+  }
+
+}
+
+/* =========================================
+   KEYNOTE SPEAKING — MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .keynote-intro {
+    padding: 2rem 0;
+  }
+
+  .keynote-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .keynote-photo {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .keynote-intro-content {
+    max-width: 100%;
+  }
+
+}
