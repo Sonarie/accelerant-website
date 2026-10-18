@@ -1,0 +1,17 @@
+
+# Local environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Private credentials
+secrets/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Dependencies and local files
+node_modules/
+.DS_Store
+Thumbs.db
