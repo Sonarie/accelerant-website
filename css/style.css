@@ -502,10 +502,15 @@ body.nav-is-fixed {
 ========================================= */
 
 .site-footer {
-  padding: 3rem 0;
+  padding: 2.5rem 0;
   background: #0c0c0c;
   color: #aaaaaa;
   font-size: 0.8rem;
+}
+
+.site-footer > .container {
+  width: min(90%, 910px);
+  margin-inline: auto;
 }
 
 .site-footer strong {
@@ -513,8 +518,9 @@ body.nav-is-fixed {
 }
 
 .site-footer p {
-  max-width: 950px;
-  margin-top: 0.75rem;
+  max-width: 910px;
+  margin: 0.75rem 0 0;
+  line-height: 1.6;
 }
 
 /* =========================================
@@ -609,6 +615,7 @@ body.nav-is-fixed {
 }
 
 
+
 /* =========================================
    ASSESSMENT
 ========================================= */
@@ -619,33 +626,45 @@ body.nav-is-fixed {
   color: var(--white);
 }
 
+/* Shared alignment for all assessment content */
+.assessment-section > .container {
+  width: min(90%, 910px);
+  margin-inline: auto;
+}
+
+/* Introduction */
 .assessment-intro {
   max-width: 850px;
+  margin: 0;
 }
 
 .assessment-intro h2 {
-  margin-bottom: 1.75rem;
+  max-width: 750px;
+  margin-bottom: 1.5rem;
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   line-height: 1.05;
   letter-spacing: -0.035em;
 }
 
 .assessment-intro > p:not(.section-label) {
-  margin-bottom: 1.25rem;
+  max-width: 850px;
+  margin-bottom: 1rem;
   color: #d0d0d0;
   font-size: 1.1rem;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
+/* Three information cards */
 .assessment-details {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.5rem;
-  margin-top: 4rem;
+  margin-top: 2.5rem;
 }
 
 .assessment-card {
-  padding: 2rem;
+  min-width: 0;
+  padding: 1.75rem;
   border: 1px solid #4a4a4a;
   background: #1c1c1c;
 }
@@ -660,28 +679,73 @@ body.nav-is-fixed {
 }
 
 .assessment-card h3 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   font-size: 1.25rem;
 }
 
 .assessment-card p {
+  margin-bottom: 0;
   color: #c8c8c8;
+  line-height: 1.6;
 }
 
+/* Closing paragraphs */
 .assessment-copy {
-  margin-top: 4rem;
+  max-width: 850px;
+  margin: 2rem 0 0;
 }
 
 .assessment-copy p {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   color: #d0d0d0;
   font-size: 1.05rem;
-  line-height: 1.8;
+  line-height: 1.7;
+}
+
+.assessment-copy p:last-child {
+  margin-bottom: 0;
 }
 
 .assessment-copy strong {
   color: var(--white);
 }
+
+/* Tablet */
+@media (max-width: 900px) {
+  .assessment-details {
+    gap: 1rem;
+  }
+
+  .assessment-card {
+    padding: 1.25rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .assessment-section {
+    padding: 3.5rem 0;
+  }
+
+  .assessment-intro h2 {
+    font-size: clamp(2.25rem, 8vw, 3.5rem);
+  }
+
+  .assessment-details {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .assessment-card {
+    padding: 1.5rem;
+  }
+
+  .assessment-copy {
+    margin-top: 2rem;
+  }
+}
+
 
 
 /* =========================================
@@ -689,47 +753,56 @@ body.nav-is-fixed {
 ========================================= */
 
 .form-section {
-  padding: 4.5rem 0;
+  padding: 3.5rem 0;
   background: var(--off-white);
 }
 
-.form-container {
-  max-width: 1000px;
+/* Center the heading and form as one unit */
+.form-section .form-container {
+  width: min(90%, 910px);
+  max-width: 910px;
+  margin-inline: auto;
 }
 
 .form-heading {
-  max-width: 750px;
-  margin-bottom: 3rem;
+  max-width: 910px;
+  margin-bottom: 2rem;
 }
 
 .form-heading h2 {
-  margin-bottom: 1rem;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  line-height: 1.05;
+  margin-bottom: 0.75rem;
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  line-height: 1.1;
   letter-spacing: -0.035em;
 }
 
 .form-heading > p:not(.section-label) {
   color: var(--gray);
-  font-size: 1.1rem;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
+/* Compact assessment form */
 .site-form {
-  padding: 3rem;
+  width: 100%;
+  max-width: 910px;
+  box-sizing: border-box;
+  padding: 2rem;
   background: var(--white);
   border: 1px solid var(--light-gray);
 }
 
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .form-field {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .form-field-full {
@@ -737,9 +810,9 @@ body.nav-is-fixed {
 }
 
 .form-field label {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   color: var(--black);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -749,7 +822,8 @@ body.nav-is-fixed {
 .form-field textarea,
 .form-field select {
   width: 100%;
-  padding: 0.9rem 1rem;
+  box-sizing: border-box;
+  padding: 0.75rem 0.9rem;
   border: 1px solid #bdbdbd;
   border-radius: 0;
   background: var(--white);
@@ -772,14 +846,34 @@ body.nav-is-fixed {
 .site-form .button {
   cursor: pointer;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .form-note {
-  margin-top: 1.25rem;
+  margin-top: 1rem;
   color: var(--gray);
   font-size: 0.85rem;
+  line-height: 1.5;
 }
+
+@media (max-width: 600px) {
+  .form-section {
+    padding: 3rem 0;
+  }
+
+  .site-form {
+    padding: 1.25rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-field-full {
+    grid-column: auto;
+  }
+}
+
 
 /* =========================================
    TRAINING SEMINARS
