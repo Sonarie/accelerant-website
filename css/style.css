@@ -508,10 +508,7 @@ body.nav-is-fixed {
   font-size: 0.8rem;
 }
 
-.site-footer > .container {
-  width: min(90%, 910px);
-  margin-inline: auto;
-}
+
 
 .site-footer strong {
   color: var(--white);
@@ -534,7 +531,7 @@ body.nav-is-fixed {
 }
 
 .page-hero-inner {
-  max-width: 900px;
+  max-width: 1200px;
 }
 
 .page-hero h1 {
@@ -587,15 +584,32 @@ body.nav-is-fixed {
   margin-bottom: 0;
 }
 
+/* About page — opening statement */
+.statement-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
 .statement-block h2 {
-  max-width: 800px;
+  max-width: none;
+  margin: 0;
 }
 
 .statement-block .lead-copy {
-  max-width: 800px;
+  max-width: none;
   color: var(--black);
-  font-size: 1.3rem;
-  line-height: 1.7;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .statement-block {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
 .content-callout {
@@ -628,7 +642,7 @@ body.nav-is-fixed {
 
 /* Shared alignment for all assessment content */
 .assessment-section > .container {
-  width: min(90%, 910px);
+  width: min(90%, 1200px);
   margin-inline: auto;
 }
 
@@ -759,13 +773,13 @@ body.nav-is-fixed {
 
 /* Center the heading and form as one unit */
 .form-section .form-container {
-  width: min(90%, 910px);
-  max-width: 910px;
+  width: min(90%, 1200px);
+  max-width: 1200px;
   margin-inline: auto;
 }
 
 .form-heading {
-  max-width: 910px;
+  max-width: 1200px;
   margin-bottom: 2rem;
 }
 
@@ -3417,4 +3431,75 @@ body.nav-is-fixed {
     max-width: 100%;
   }
 
+}
+
+/* About page — credibility statistics */
+.credibility-stats {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.credibility-stat {
+  display: flex;
+  flex-direction: column;
+  border-left: 3px solid var(--accent);
+  padding-left: 1.25rem;
+}
+
+.credibility-number {
+  color: var(--accent);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.credibility-label {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 600px) {
+  .credibility-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+/* About page — Why Access Matters */
+.access-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.access-layout .content-callout {
+  margin-top: 0;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .access-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Home page — mobile hero layout */
+@media (max-width: 768px) {
+  .home-hero .hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .home-hero .hero-content,
+  .home-hero .hero-video {
+    min-width: 0;
+    width: 100%;
+  }
 }
