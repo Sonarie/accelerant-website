@@ -59,7 +59,7 @@
 
     <section class="content-section">
 
-      <div class="container content-narrow">
+      <div class="container">
 
         <p class="section-label">
           Coming Soon
@@ -135,121 +135,114 @@
          WAITING LIST FORM
     ========================================= -->
 
-    <section class="form-section">
+    
+<section class="form-section">
 
-      <div class="container">
+  <div class="container">
 
-        <div class="form-heading">
+    <div class="form-heading">
+      <p class="section-label">
+        Public Seminar Waiting List
+      </p>
 
-          <p class="section-label">
-            Public Seminar Waiting List
-          </p>
+      <h2>Keep Me Informed</h2>
 
-          <h2>
-            Keep Me Informed
-          </h2>
+      <p>
+        Complete your contact information below, then answer a few
+        short questions to help shape Accelerant International's
+        upcoming public seminars.
+      </p>
+    </div>
 
-          <p>
-            Complete the information below to receive updates
-            about upcoming public seminars.
-          </p>
+    <form
+      id="seminar-waitlist-form"
+      class="site-form seminar-waitlist-form"
+      action="https://formspree.io/f/mzeedlag"
+      method="POST"
+    >
 
+      <div class="form-grid">
+
+        <div class="form-field">
+          <label for="seminar-name">Name</label>
+          <input
+            type="text"
+            id="seminar-name"
+            name="name"
+            autocomplete="name"
+            required
+          >
         </div>
 
-
-        <form class="site-form">
-
-          <div class="form-grid">
-
-            <div class="form-field">
-
-              <label for="seminar-name">
-                Name
-              </label>
-
-              <input
-                type="text"
-                id="seminar-name"
-                name="name"
-              >
-
-            </div>
-
-
-            <div class="form-field">
-
-              <label for="seminar-organization">
-                Organization
-              </label>
-
-              <input
-                type="text"
-                id="seminar-organization"
-                name="organization"
-              >
-
-            </div>
-
-
-            <div class="form-field">
-
-              <label for="seminar-years">
-                Years with Company
-              </label>
-
-              <input
-                type="text"
-                id="seminar-years"
-                name="years_with_company"
-              >
-
-            </div>
-
-
-            <div class="form-field">
-
-              <label for="seminar-email">
-                Email
-              </label>
-
-              <input
-                type="email"
-                id="seminar-email"
-                name="email"
-              >
-
-            </div>
-
-
-            <div class="form-field">
-
-              <label for="seminar-cell">
-                Cell
-              </label>
-
-              <input
-                type="tel"
-                id="seminar-cell"
-                name="cell"
-              >
-
-            </div>
-
-          </div>
-
-
-          <button
-            type="submit"
-            class="button button-primary"
+        <div class="form-field">
+          <label for="seminar-organization">Organization</label>
+          <input
+            type="text"
+            id="seminar-organization"
+            name="organization"
+            autocomplete="organization"
           >
-            Join the Waiting List
-          </button>
+        </div>
 
-        </form>
+        <div class="form-field">
+          <label for="seminar-years">Years with Company</label>
+          <input
+            type="text"
+            id="seminar-years"
+            name="years_with_company"
+          >
+        </div>
+
+        <div class="form-field">
+          <label for="seminar-email">Email</label>
+          <input
+            type="email"
+            id="seminar-email"
+            name="email"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="form-field">
+          <label for="seminar-cell">Cell</label>
+          <input
+            type="tel"
+            id="seminar-cell"
+            name="cell"
+            autocomplete="tel"
+          >
+        </div>
 
       </div>
 
-    </section>
+      <p class="seminar-form-note">
+        Next, you'll complete a short questionnaire about your
+        seminar interests and email communication preferences.
+        Registration is complete after both steps.
+      </p>
+
+      <button
+        type="submit"
+        class="button button-primary"
+      >
+        Continue to Seminar Questionnaire
+      </button>
+
+    </form>
+
+    <p
+      id="seminar-waitlist-message"
+      class="seminar-waitlist-message"
+      role="status"
+      aria-live="polite"
+      hidden
+    ></p>
+
+  </div>
+
+</section>
+
 
 
   </main>
@@ -270,5 +263,97 @@
   <script src="js/script.js"></script>
 
 </body>
+
+
+<script>
+  const seminarForm = document.getElementById("seminar-waitlist-form");
+  const seminarMessage = document.getElementById("seminar-waitlist-message");
+
+  seminarForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const submitButton = seminarForm.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.textContent.trim();
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Submitting...";
+    seminarMessage.hidden = true;
+
+    // Capture the values before submitting to Formspree.
+    const formData = new FormData(seminarForm);
+
+    const fullName = String(formData.get("name") || "").trim();
+    const nameParts = fullName.split(/\s+/);
+
+    const firstName = nameParts.shift() || "";
+    const lastName = nameParts.join(" ");
+
+    const organization = String(formData.get("organization") || "");
+    const yearsWithCompany = String(formData.get("years_with_company") || "");
+    const email = String(formData.get("email") || "");
+    const cell = String(formData.get("cell") || "");
+
+    try {
+      const response = await fetch(seminarForm.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error("Formspree submission failed");
+      }
+
+      // Build the Jotform URL with prefilled contact fields.
+      const jotformURL = new URL(
+        "https://form.jotform.com/262974652028060"
+      );
+
+      // Jotform Name field: name19 (First Name / Last Name).
+      jotformURL.searchParams.set("name19[first]", firstName);
+      jotformURL.searchParams.set("name19[last]", lastName);
+
+      // Other Jotform fields.
+      jotformURL.searchParams.set("organization", organization);
+      jotformURL.searchParams.set("yearsWith", yearsWithCompany);
+      jotformURL.searchParams.set("email", email);
+      jotformURL.searchParams.set("phoneNumber", cell);
+
+      submitButton.textContent = "Opening Questionnaire...";
+
+      // Continue to the required Jotform questionnaire.
+      const jotformTab = window.open(jotformURL.toString(), "_blank");
+
+if (jotformTab) {
+  seminarForm.hidden = true;
+
+  seminarMessage.textContent =
+    "Your contact information has been received! Please complete the questionnaire in the new tab to finish joining the Public Seminars waiting list.";
+
+  seminarMessage.hidden = false;
+
+  seminarMessage.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+} else {
+  // If the browser blocks the new tab, continue in this tab.
+  window.location.assign(jotformURL.toString());
+}
+
+    } catch (error) {
+      seminarMessage.textContent =
+        "We couldn't submit your information right now. Please try again.";
+
+      seminarMessage.hidden = false;
+
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
+    }
+  });
+</script>
+
 
 </html>

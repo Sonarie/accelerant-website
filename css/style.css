@@ -3798,3 +3798,68 @@ body.nav-is-fixed {
     border-top: 1px solid #ddd;
   }
 }
+
+/* ========================================
+   PUBLIC SEMINARS — WAITING LIST
+======================================== */
+
+.seminar-waitlist-form {
+  width: 100%;
+  max-width: none;
+}
+
+.seminar-waitlist-form .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.seminar-waitlist-form .form-field {
+  min-width: 0;
+}
+
+.seminar-waitlist-form input {
+  width: 100%;
+}
+
+.seminar-waitlist-message {
+  padding: 2rem;
+  border-left: 4px solid var(--accent);
+  background: #f7f7f7;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .seminar-waitlist-form .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Public Seminars — Consent Checkbox */
+
+.seminar-waitlist-form .seminar-consent {
+  margin: 2rem 0 1.5rem;
+}
+
+.seminar-waitlist-form .seminar-consent label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.seminar-waitlist-form .seminar-consent input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  flex-shrink: 0;
+  margin: 0.2rem 0 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
