@@ -3707,3 +3707,94 @@ body.nav-is-fixed {
   font-weight: 700;
 }
 
+/* ========================================
+   MASTER LICENSING — OPPORTUNITY
+======================================== */
+
+.licensing-opportunity-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.licensing-opportunity-heading h2 {
+  margin-bottom: 0;
+}
+
+.licensing-opportunity-copy {
+  border-left: 3px solid var(--accent);
+  padding-left: 2rem;
+}
+
+.licensing-opportunity-copy .lead-copy {
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .licensing-opportunity-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .licensing-opportunity-copy {
+    padding-left: 1.25rem;
+  }
+}
+
+/* ========================================
+   MASTER LICENSING — BUSINESS
+======================================== */
+
+.licensing-business-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 3rem 0 2.5rem;
+  border-top: 2px solid var(--accent);
+  border-bottom: 1px solid #ddd;
+}
+
+.licensing-business-step {
+  padding: 2rem 1.75rem;
+  position: relative;
+}
+
+.licensing-business-step + .licensing-business-step {
+  border-left: 1px solid #ddd;
+}
+
+.licensing-business-number {
+  display: block;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.5rem;
+}
+
+.licensing-business-step h3 {
+  margin-bottom: 0.75rem;
+}
+
+.licensing-business-step p {
+  line-height: 1.7;
+}
+
+.licensing-business-next {
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .licensing-business-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .licensing-business-step {
+    padding: 1.5rem 0;
+  }
+
+  .licensing-business-step + .licensing-business-step {
+    border-left: 0;
+    border-top: 1px solid #ddd;
+  }
+}
