@@ -535,14 +535,14 @@ body.nav-is-fixed {
 }
 
 .page-hero h1 {
-  max-width: 850px;
+  max-width: none;
   font-size: clamp(3rem, 6vw, 5rem);
   line-height: 1;
   letter-spacing: -0.04em;
 }
 
 .page-hero-lead {
-  max-width: 750px;
+  max-width: none;
   margin-top: 1.75rem;
   color: #dddddd;
   font-size: 1.3rem;
@@ -3605,3 +3605,105 @@ body.nav-is-fixed {
     padding-left: 1.25rem;
   }
 }
+
+
+/* ========================================
+   SELLING HUGE CONCEPTS — PREMIUM SHOWCASE
+======================================== */
+
+.premier-feature-enhanced .premier-feature-heading {
+  max-width: 850px;
+  margin-bottom: 3rem;
+}
+
+.premier-feature-intro {
+  max-width: 650px;
+  margin-top: 1.25rem;
+  color: #cccccc;
+  line-height: 1.7;
+}
+
+.premier-opportunity-showcase {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem 3rem;
+}
+
+.premier-showcase-item {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
+  gap: 1.25rem;
+  padding: 2rem 0;
+  border-top: 1px solid #555555;
+}
+
+.premier-showcase-number {
+  color: var(--accent);
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.premier-showcase-item h3 {
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+  font-size: 1.3rem;
+}
+
+.premier-showcase-item p {
+  color: #cccccc;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .premier-opportunity-showcase {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .premier-showcase-item {
+    grid-template-columns: 45px minmax(0, 1fr);
+    gap: 1rem;
+    padding: 1.75rem 0;
+  }
+
+  .premier-showcase-number {
+    font-size: 1.4rem;
+  }
+}
+
+
+/* ========================================
+   RESOLVING CRITICAL ISSUES — INTRO
+======================================== */
+
+.critical-intro h2 {
+  max-width: none;
+  margin-bottom: 2rem;
+}
+
+.critical-intro-statement {
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 2.5rem;
+}
+
+.critical-intro-detail {
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--accent);
+}
+
+.critical-intro-detail p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--gray);
+}
+
+.critical-intro-detail strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
