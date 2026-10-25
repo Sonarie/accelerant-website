@@ -1229,6 +1229,36 @@ body.nav-is-fixed {
 
 
 /* =========================================
+   BOOK ROW — MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .book-row {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem 0;
+  }
+
+  .book-row-content {
+    min-width: 0;
+  }
+
+  .book-row-visual {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+  }
+
+  .book-cover-image {
+    width: min(260px, 100%);
+  }
+
+}
+
+
+
+/* =========================================
    BOOK COVER
 ========================================= */
 
@@ -1282,55 +1312,27 @@ body.nav-is-fixed {
 }
 
 
+
 /* =========================================
-   ADVANCED BOOK
+   GET MORE BOOK
 ========================================= */
 
+/* Preserve the reversed desktop layout */
 .book-row-advanced {
   grid-template-columns: 1.2fr 0.8fr;
 }
 
-.advanced-book-cover {
-  position: relative;
+/* Stack the book content and image on mobile */
+@media (max-width: 768px) {
+  .book-row-advanced {
+    grid-template-columns: minmax(0, 1fr);
+  }
 
-  width: min(360px, 100%);
-
-  overflow: hidden;
-
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.16),
-    0 5px 12px rgba(0, 0, 0, 0.08);
+  .book-row-advanced .book-row-visual {
+    order: -1;
+  }
 }
 
-.advanced-book-cover .book-cover-image {
-  width: 100%;
-  box-shadow: none;
-}
-
-.advanced-banner {
-  position: absolute;
-
-  left: -15%;
-  width: 130%;
-  top: 48%;
-
-  padding: 0.8rem 1rem;
-
-  background: var(--accent);
-  color: var(--white);
-
-  font-size: clamp(1.25rem, 3vw, 2rem);
-  font-weight: 800;
-
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.28);
-
-  transform: rotate(-12deg);
-  transform-origin: center;
-}
 
 
 /* =========================================
