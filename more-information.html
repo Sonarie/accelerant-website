@@ -53,310 +53,236 @@
     </section>
 
 
-    <!-- ========================================
-         INTRODUCTION
-    ========================================= -->
+<!-- ========================================
+     MORE INFORMATION REQUEST FORM
+======================================== -->
 
-    <section class="content-section">
+<section class="content-section info-request-section">
 
-      <div class="container content-narrow">
+  <div class="container">
 
-        <p class="section-label">
-          Start Here
-        </p>
+    <div class="info-request-heading">
 
-        <h2>
-          What Would You Like to Learn More About?
-        </h2>
+      <p class="section-label">
+        Request Information
+      </p>
 
-        <p class="lead-copy">
-          Accelerant International works with organizations and
-          professionals across training, executive advisory,
-          advanced applications, and The Circle of Leverage System.
-        </p>
+      <h2>
+        Tell Us What You're Looking For
+      </h2>
 
-        <p>
-          Complete the information below and let us know what
-          you're interested in exploring.
-        </p>
+      <p class="lead-copy">
+        Accelerant International works with organizations
+        and professionals across training, executive advisory,
+        advanced applications, and The Circle of Leverage System.
+      </p>
 
-      </div>
+      <p>
+        Share a little about yourself, your organization,
+        and what you'd like to explore. We'll use your
+        information to help determine the most appropriate
+        next step.
+      </p>
 
-    </section>
+    </div>
 
 
-    <!-- ========================================
-         INFORMATION FORM
-    ========================================= -->
+    
+<form
+  id="info-request-form"
+  class="site-form info-request-form"
+  action="https://formspree.io/f/xeaaeydy"
+  method="POST"
+>
 
-    <section class="form-section">
 
-      <div class="container">
+      <div class="form-grid">
 
-        <div class="form-heading">
+        <!-- NAME -->
 
-          <p class="section-label">
-            Request Information
-          </p>
-
-          <h2>
-            Tell Us About You
-          </h2>
-
-          <p>
-            Provide a little information about yourself,
-            your organization, and what you'd like to discuss.
-          </p>
-
+        <div class="form-field">
+          <label for="info-name">Name *</label>
+          <input
+            type="text"
+            id="info-name"
+            name="name"
+            autocomplete="name"
+            required
+          >
         </div>
 
-
-        <form class="site-form">
-
-          <div class="form-grid">
-
-
-            <!-- NAME -->
-
-            <div class="form-field">
-
-              <label for="info-name">
-                Name
-              </label>
-
-              <input
-                type="text"
-                id="info-name"
-                name="name"
-              >
-
-            </div>
-
-
-            <!-- TITLE -->
-
-            <div class="form-field">
-
-              <label for="info-title">
-                Title
-              </label>
-
-              <input
-                type="text"
-                id="info-title"
-                name="title"
-              >
-
-            </div>
-
-
-            <!-- ORGANIZATION -->
-
-            <div class="form-field">
-
-              <label for="info-organization">
-                Organization
-              </label>
-
-              <input
-                type="text"
-                id="info-organization"
-                name="organization"
-              >
-
-            </div>
-
-
-            <!-- HEADQUARTERS -->
-
-            <div class="form-field">
-
-              <label for="info-headquarters">
-                Headquarters
-              </label>
-
-              <input
-                type="text"
-                id="info-headquarters"
-                name="headquarters"
-              >
-
-            </div>
-
-
-            <!-- YEARS WITH COMPANY -->
-
-            <div class="form-field">
-
-              <label for="info-years">
-                Years with Company
-              </label>
-
-              <input
-                type="text"
-                id="info-years"
-                name="years_with_company"
-              >
-
-            </div>
-
-
-            <!-- ANNUAL REVENUES -->
-
-            <div class="form-field">
-
-              <label for="info-revenue">
-                Annual Revenues
-              </label>
-
-              <input
-                type="text"
-                id="info-revenue"
-                name="annual_revenues"
-              >
-
-            </div>
-
-
-            <!-- U.S. PRODUCERS -->
-
-            <div class="form-field">
-
-              <label for="info-us-producers">
-                Number of Producers in U.S.
-              </label>
-
-              <input
-                type="number"
-                id="info-us-producers"
-                name="us_producers"
-                min="0"
-              >
-
-            </div>
-
-
-            <!-- INTERNATIONAL PRODUCERS -->
-
-            <div class="form-field">
-
-              <label for="info-international-producers">
-                Number of Producers Internationally
-              </label>
-
-              <input
-                type="number"
-                id="info-international-producers"
-                name="international_producers"
-                min="0"
-              >
-
-            </div>
-
-
-            <!-- EMAIL -->
-
-            <div class="form-field">
-
-              <label for="info-email">
-                Email
-              </label>
-
-              <input
-                type="email"
-                id="info-email"
-                name="email"
-              >
-
-            </div>
-
-
-            <!-- CELL -->
-
-            <div class="form-field">
-
-              <label for="info-cell">
-                Cell
-              </label>
-
-              <input
-                type="tel"
-                id="info-cell"
-                name="cell"
-              >
-
-            </div>
-
-
-            <!-- EA NAME -->
-
-            <div class="form-field">
-
-              <label for="info-ea-name">
-                Name of EA
-              </label>
-
-              <input
-                type="text"
-                id="info-ea-name"
-                name="ea_name"
-              >
-
-            </div>
-
-
-            <!-- EA EMAIL -->
-
-            <div class="form-field">
-
-              <label for="info-ea-email">
-                EA Email
-              </label>
-
-              <input
-                type="email"
-                id="info-ea-email"
-                name="ea_email"
-              >
-
-            </div>
-
-
-            <!-- INTEREST -->
-
-            <div class="form-field form-field-full">
-
-              <label for="info-interest">
-                I Want to Learn More About
-              </label>
-
-              <textarea
-                id="info-interest"
-                name="interest"
-                rows="6"
-              ></textarea>
-
-            </div>
-
-
-          </div>
-
-
-          <button
-            type="submit"
-            class="button button-primary"
+        <!-- TITLE -->
+
+        <div class="form-field">
+          <label for="info-title">Title</label>
+          <input
+            type="text"
+            id="info-title"
+            name="title"
           >
-            Request More Information
-          </button>
+        </div>
 
-        </form>
+        <!-- ORGANIZATION -->
+
+        <div class="form-field">
+          <label for="info-organization">Organization</label>
+          <input
+            type="text"
+            id="info-organization"
+            name="organization"
+          >
+        </div>
+
+        <!-- HEADQUARTERS -->
+
+        <div class="form-field">
+          <label for="info-headquarters">Headquarters</label>
+          <input
+            type="text"
+            id="info-headquarters"
+            name="headquarters"
+          >
+        </div>
+
+        <!-- YEARS WITH COMPANY -->
+
+        <div class="form-field">
+          <label for="info-years">Years with Company</label>
+          <input
+            type="text"
+            id="info-years"
+            name="years_with_company"
+          >
+        </div>
+
+        <!-- ANNUAL REVENUES -->
+
+        <div class="form-field">
+          <label for="info-revenue">Annual Revenues</label>
+          <input
+            type="text"
+            id="info-revenue"
+            name="annual_revenues"
+          >
+        </div>
+
+        <!-- U.S. PRODUCERS -->
+
+        <div class="form-field">
+          <label for="info-us-producers">
+            Number of Producers in U.S.
+          </label>
+          <input
+            type="number"
+            id="info-us-producers"
+            name="us_producers"
+            min="0"
+          >
+        </div>
+
+        <!-- INTERNATIONAL PRODUCERS -->
+
+        <div class="form-field">
+          <label for="info-international-producers">
+            Number of Producers Internationally
+          </label>
+          <input
+            type="number"
+            id="info-international-producers"
+            name="international_producers"
+            min="0"
+          >
+        </div>
+
+        <!-- EMAIL -->
+
+        <div class="form-field">
+          <label for="info-email">Email *</label>
+          <input
+            type="email"
+            id="info-email"
+            name="email"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <!-- CELL -->
+
+        <div class="form-field">
+          <label for="info-cell">Cell</label>
+          <input
+            type="tel"
+            id="info-cell"
+            name="cell"
+            autocomplete="tel"
+          >
+        </div>
+
+        <!-- EA NAME -->
+
+        <div class="form-field">
+          <label for="info-ea-name">Name of EA</label>
+          <input
+            type="text"
+            id="info-ea-name"
+            name="ea_name"
+          >
+        </div>
+
+        <!-- EA EMAIL -->
+
+        <div class="form-field">
+          <label for="info-ea-email">EA Email</label>
+          <input
+            type="email"
+            id="info-ea-email"
+            name="ea_email"
+          >
+        </div>
+
+        <!-- INTEREST -->
+
+        <div class="form-field form-field-full">
+          <label for="info-interest">
+            What Would You Like to Learn More About? *
+          </label>
+          <textarea
+            id="info-interest"
+            name="interest"
+            rows="5"
+            required
+          ></textarea>
+        </div>
 
       </div>
 
-    </section>
+      <p class="info-request-required">
+        * Required fields
+      </p>
+
+      <button
+        type="submit"
+        class="button button-primary"
+      >
+        Request More Information
+      </button>
+
+    </form>
+
+<p
+  id="info-request-message"
+  class="info-request-message"
+  role="status"
+  aria-live="polite"
+  hidden
+></p>
 
 
-  </main>
+  </div>
+
+</section>
+    
 
 
   <!-- ========================================
@@ -372,6 +298,64 @@
 
   <script src="js/components.js"></script>
   <script src="js/script.js"></script>
+
+
+<script>
+  const infoForm = document.getElementById("info-request-form");
+  const infoMessage = document.getElementById("info-request-message");
+
+  if (infoForm && infoMessage) {
+    infoForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const submitButton = infoForm.querySelector('button[type="submit"]');
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Submitting...";
+      infoMessage.hidden = true;
+
+      try {
+        const response = await fetch(infoForm.action, {
+          method: "POST",
+          body: new FormData(infoForm),
+          headers: {
+            Accept: "application/json"
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error("Form submission failed");
+        }
+
+        infoForm.reset();
+        infoForm.hidden = true;
+
+        infoMessage.textContent =
+          "Thank you for contacting Accelerant International! " +
+          "Your information has been received. " +
+          "A member of our team will review your inquiry and follow up.";
+
+        infoMessage.hidden = false;
+        infoMessage.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+      } catch (error) {
+        infoMessage.textContent =
+          "We couldn't submit your request right now. " +
+          "Please try again.";
+
+        infoMessage.hidden = false;
+
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Request More Information";
+      }
+    });
+  }
+</script>
+
 
 </body>
 
