@@ -3504,3 +3504,104 @@ body.nav-is-fixed {
     width: 100%;
   }
 }
+
+
+/* ========================================
+   WEEKLY APPLICATION COACHING EXPERIENCE
+======================================== */
+
+.coaching-experience .coaching-intro {
+  max-width: 760px;
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+.coaching-experience-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.coaching-experience-card {
+  padding: 2rem;
+  background: #f5f5f5;
+  border-top: 3px solid var(--accent);
+}
+
+.coaching-experience-card > span {
+  display: block;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.coaching-experience-card h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+
+.coaching-experience-card p {
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .coaching-experience-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .coaching-experience-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ========================================
+   WEEKLY COACHING — INTRO LAYOUT
+======================================== */
+
+.coaching-intro-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.coaching-intro-heading h2 {
+  max-width: 460px;
+  line-height: 1.15;
+}
+
+.coaching-intro-copy {
+  min-width: 0;
+  padding-left: 2rem;
+  border-left: 3px solid var(--accent);
+}
+
+.coaching-intro-copy p {
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+
+.coaching-intro-copy p:last-child {
+  margin-bottom: 0;
+}
+
+/* Tablet and mobile */
+@media (max-width: 768px) {
+  .coaching-intro-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .coaching-intro-copy {
+    padding-left: 1.25rem;
+  }
+}
