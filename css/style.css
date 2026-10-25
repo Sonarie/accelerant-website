@@ -3863,3 +3863,259 @@ body.nav-is-fixed {
   accent-color: var(--accent);
   cursor: pointer;
 }
+
+
+
+/* ========================================
+   PODCAST FEATURE & MAILCHIMP SIGNUP
+======================================== */
+
+.podcast-feature-signup {
+  background: #222;
+  padding: 3.5rem 0;
+}
+
+/* Stacked podcast announcement */
+
+.podcast-feature-signup .podcast-stacked-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.podcast-announcement {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+}
+
+/* Play icon — no outer ring */
+
+.podcast-play-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 1rem;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.podcast-play-icon span {
+  color: #fff;
+  font-size: 1.4rem;
+  margin-left: 3px;
+}
+
+/* Podcast title */
+
+.podcast-announcement h2 {
+  color: #c73539;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  margin: 0 0 0.35rem;
+}
+
+/* Coming Soon subtitle */
+
+.podcast-announcement .section-label {
+  color: #fff;
+  font-size: clamp(1.25rem, 2.2vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  margin-bottom: 1rem;
+}
+
+/* Description */
+
+.podcast-announcement-lead {
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 0.35rem;
+}
+
+.podcast-announcement > p:last-child {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* ========================================
+   WIDE MAILCHIMP SIGNUP PANEL
+======================================== */
+
+.podcast-feature-signup .podcast-feature-signup-form {
+  width: 100%;
+  max-width: 950px;
+  background: #fff;
+  color: #222;
+  border-top: 4px solid var(--accent);
+  padding: 2rem 2.5rem;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  column-gap: 3rem;
+  align-items: start;
+}
+
+/* Left column: introduction */
+
+.podcast-feature-signup-form > .section-label,
+.podcast-feature-signup-form > h3,
+.podcast-feature-signup-form > p:not(.section-label) {
+  grid-column: 1;
+}
+
+.podcast-feature-signup-form > .section-label {
+  margin-bottom: 0.5rem;
+}
+
+.podcast-feature-signup-form h3 {
+  color: #222;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.podcast-feature-signup-form > p:not(.section-label) {
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* Right column: working Mailchimp form */
+
+.podcast-feature-signup-form > form {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  min-width: 0;
+}
+
+.podcast-feature-signup-form .form-field {
+  margin-bottom: 1rem;
+}
+
+.podcast-feature-signup-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.podcast-feature-signup-form input[type="email"] {
+  display: block;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  background: #fff;
+  color: #222;
+  font: inherit;
+}
+
+.podcast-feature-signup-form input[type="email"]:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.podcast-feature-signup-form .podcast-signup-consent {
+  color: #666;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .podcast-feature-signup {
+    padding: 3rem 0;
+  }
+
+  .podcast-announcement h2 {
+    font-size: clamp(2.3rem, 8vw, 3.4rem);
+  }
+
+  .podcast-feature-signup .podcast-feature-signup-form {
+    grid-template-columns: 1fr;
+    padding: 1.75rem;
+    column-gap: 0;
+  }
+
+  .podcast-feature-signup-form > .section-label,
+  .podcast-feature-signup-form > h3,
+  .podcast-feature-signup-form > p:not(.section-label),
+  .podcast-feature-signup-form > form {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .podcast-feature-signup-form > p:not(.section-label) {
+    margin-bottom: 1.5rem;
+  }
+
+}
+
+/* ========================================
+   PODCAST INTRODUCTION
+======================================== */
+
+.podcast-intro-section {
+  background: #fff;
+}
+
+.podcast-intro-heading {
+  margin-bottom: 2.5rem;
+}
+
+.podcast-intro-heading h2 {
+  margin-bottom: 1rem;
+}
+
+.podcast-intro-heading .lead-copy {
+  max-width: 900px;
+  margin-bottom: 0;
+}
+
+.podcast-intro-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3.5rem;
+}
+
+.podcast-intro-item {
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--accent);
+}
+
+.podcast-intro-item .section-label {
+  margin-bottom: 0.75rem;
+}
+
+.podcast-intro-item h3 {
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.podcast-intro-item p:last-child {
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .podcast-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .podcast-intro-heading {
+    margin-bottom: 2rem;
+  }
+}
+
