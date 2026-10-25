@@ -804,6 +804,7 @@ body.nav-is-fixed {
   padding: 2rem;
   background: var(--white);
   border: 1px solid var(--light-gray);
+  margin-inline: auto;
 }
 
 .form-grid {
@@ -1069,7 +1070,7 @@ body.nav-is-fixed {
 
 .delivery-item {
   min-height: 260px;
-  padding: 2rem;
+  padding: 2rem 1.25rem;
   border-right: 1px solid var(--light-gray);
 }
 
