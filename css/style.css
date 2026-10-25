@@ -1244,11 +1244,8 @@ body.nav-is-fixed {
   width: min(360px, 100%);
   height: auto;
 
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.16),
-    0 5px 12px rgba(0, 0, 0, 0.08);
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.18));
 }
-
 
 /* =========================================
    BOOK CONTENT
